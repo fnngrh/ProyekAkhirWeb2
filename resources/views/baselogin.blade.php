@@ -48,18 +48,9 @@
             <li class="nav-item dropdown">
               <a>
               </a>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                     </div>
-                  </div>
-                </a>
-                <a class="dropdown-item preview-item"> 
-                    </div>
-                  </div>
-                </a>  
                 </a> 
-            </div>
-        </nav>
+        </div>
+      </nav>
       <div class="container-fluid page-body-wrapper">
         
         

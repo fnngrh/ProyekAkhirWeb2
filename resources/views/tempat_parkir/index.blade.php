@@ -1,10 +1,15 @@
 @extends ('base')
  @section ('konten')
 
-
- <div class="col-lg-12 grid-margin stretch-card">
+                  
+                   <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
+                  <div class="add-items d-flex">
+                  <a href="{{route('tempat_parkir.create')}}" class="float-right btn btn-primary btn-sm">Tambah Data </a>
+                    
+                  </div>
+                    
                     <table class="table table-bordered">
                       <thead>
                         <tr>

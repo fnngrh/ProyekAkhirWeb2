@@ -11,8 +11,6 @@
                           <th width="1"> Jadwal Shift </th>
                           <th> Hari </th>
                           <th> Jam </th>
-                          
-                          
                         </tr>
                       </thead>
                       <tbody>
