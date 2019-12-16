@@ -14,21 +14,18 @@
                       <thead>
                         <tr>
                           <th width="1"> id Parkir </th>
+                          <th> No Polisi </th>
                           <th> Waktu Masuk </th>
                           <th> Waktu Keluar </th>
-                          <th> Lama Parkir </th>
-                          <th> Total Tarif </th>
-                          
                         </tr>
                       </thead>
                       <tbody>
                       @foreach ($tempat_parkir as $value)
                         <tr>
                         <td>{{ $value->id_tempatparkir}} </td>
-                          <td>{{ $value->waktu_masuk}}</td>
-                          <td>{{ $value->waktu_keluar}}</td>
-                          <td>{{ $value->lama_parkir}}</td>
-                          <td>{{ $value->total_tarif}}</td>
+                        <td>{{ $value->no_polisi}}</td>
+                        <td>{{ $value->waktu_masuk}}</td>
+                        <td>{{ $value->waktu_keluar}}</td>
                         </tr>
                         @endforeach
                       </tbody>

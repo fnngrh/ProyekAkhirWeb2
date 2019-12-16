@@ -11,7 +11,8 @@ class Shift extends Model
     protected $primarykey = 'id_shift';
     protected $fillable = [
             'hari',
-            'jam'
+            'jam',
+            'jadwal_shift'
     ];
 
     public $timestamps = false;

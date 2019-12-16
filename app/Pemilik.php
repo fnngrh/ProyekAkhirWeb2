@@ -10,8 +10,8 @@ class Pemilik extends Model
 
     protected $primarykey = 'id_pemilik';
     protected $fillable = [
-            'nama',
-            'no_polisi',
+            'nama_pemilik',
+            'telp',
             'alamat'
     ];
 

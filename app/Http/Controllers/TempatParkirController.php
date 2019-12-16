@@ -16,14 +16,12 @@ class TempatParkirController extends Controller
     public function index()
     {
 
-        // $list = DB::table('tempat_parkir')
-        //     ->join('kendaraan', 'tempat_parkir.id_kendaraan', '=', 'kendaraan.id_kendaraan')
-        //     ->get();    
-
+        $list = DB::table('tempat_parkir')
+        ->join('kendaraan', 'tempat_parkir.id_kendaraan', '=', 'kendaraan.id_kendaraan')
+        ->get();
 
         $data = Tempat_Parkir::all();
-        return view('tempat_parkir.index')->with('tempat_parkir', $data);
-        // return view('tempat_parkir.index')->with('tempat_parkir', $list);
+        return view('tempat_parkir.index')->with('tempat_parkir', $list);
     }
 
     /**

@@ -15,8 +15,13 @@ class KendaraanController extends Controller
      */
     public function index()
     {
+        $list = DB::table('kendaraan')
+        ->join('pemilik', 'kendaraan.id_pemilik', '=', 'pemilik.id_pemilik')
+        ->get();
+
+
         $data = Kendaraan::all();
-        return view('kendaraan.index')->with('kendaraan', $data);
+        return view('kendaraan.index')->with('kendaraan', $list);
     }
 
     /**

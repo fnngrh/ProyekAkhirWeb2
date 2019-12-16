@@ -15,10 +15,12 @@ class Karyawan extends Migration
     {
         Schema::create('karyawan', function (Blueprint $table) {
             $table->bigIncrements('id_karyawan');
-            $table->string('nama');
+            $table->bigInteger('id_shift')->unsigned();
+            $table->string('nama_karyawan');
             $table->string('lokasi_pos');
-            $table->string('jadwal_shift');
             $table->timestamps();
+
+            $table->foreign('id_shift')->references('id_shift')->on('shift');
         });
     }
 

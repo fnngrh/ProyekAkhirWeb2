@@ -14,12 +14,13 @@ class TempatParkir extends Migration
     public function up()
     {
         Schema::create('tempat_parkir', function (Blueprint $table) {
-            $table->bigIncrements('id_tempatparkir');
+            $table->bigIncrements('id_parkir');
+            $table->bigInteger('id_kendaraan')->unsigned();
             $table->datetime('waktu_masuk');
             $table->datetime('waktu_keluar');
-            $table->datetime('lama_parkir');
-            $table->string('total_tarif');
             $table->timestamps();
+
+            $table->foreign('id_kendaraan')->references('id_kendaraan')->on('kendaraan');
         });
     }
 

@@ -10,9 +10,10 @@ class Kendaraan extends Model
 
     protected $primarykey = 'id_kendaraan';
     protected $fillable = [
-            'nama_pemilik',
+            'id_pemilik',
             'no_polisi',
-            'jenis_kendaraan'
+            'jenis_kendaraan',
+            'nama_kendaraan'
     ];
 
     public $timestamps = false;

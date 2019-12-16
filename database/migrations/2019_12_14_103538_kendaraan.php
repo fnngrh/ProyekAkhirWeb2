@@ -15,10 +15,13 @@ class Kendaraan extends Migration
     {
         Schema::create('kendaraan', function (Blueprint $table) {
             $table->bigIncrements('id_kendaraan');
-            $table->string('nama_pemilik');
+            $table->bigInteger('id_pemilik')->unsigned();
             $table->string('no_polisi');
+            $table->string('nama_kendaraan');
             $table->string('jenis_kendaraan');
             $table->timestamps();
+
+            $table->foreign('id_pemilik')->references('id_pemilik')->on('pemilik');
         });
     }
 

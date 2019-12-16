@@ -10,9 +10,9 @@ class Karyawan extends Model
 
     protected $primarykey = 'id_karyawan';
     protected $fillable = [
-            'nama',
+            'nama_karyawan',
             'lokasi_pos',
-            'jadwal_shift'
+            'id_shift'
     ];
 
     public $timestamps = false;

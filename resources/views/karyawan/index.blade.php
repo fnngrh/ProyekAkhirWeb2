@@ -9,7 +9,7 @@
                       <thead>
                         <tr>
                           <th width="1"> id Karyawan </th>
-                          <th> Nama </th>
+                          <th> Nama Karyawan</th>
                           <th> Lokasi Pos </th>
                           <th> Jadwal Shift </th>
                         </tr>
@@ -18,7 +18,7 @@
                       @foreach ($karyawan as $value)
                         <tr>
                         <td>{{ $value->id_karyawan}} </td>
-                          <td>{{ $value->nama}}</td>
+                          <td>{{ $value->nama_karyawan}}</td>
                           <td>{{ $value->lokasi_pos}}</td>
                           <td>{{ $value->jadwal_shift}} </td>
                         </tr>

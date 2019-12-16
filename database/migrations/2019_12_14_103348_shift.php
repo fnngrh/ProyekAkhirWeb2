@@ -15,8 +15,9 @@ class Shift extends Migration
     {
         Schema::create('shift', function (Blueprint $table) {
             $table->bigIncrements('id_shift');
+            $table->string('jadwal_shift');
             $table->string('hari');
-            $table->string('jam');
+            $table->time('jam');
             $table->timestamps();
         });
     }

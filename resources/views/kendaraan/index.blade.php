@@ -9,8 +9,9 @@
                       <thead>
                         <tr>
                           <th width="1"> id Kendaraan </th>
-                          <th> Nama Pemilik </th>
                           <th> No Polisi </th>
+                          <th> Nama Kendaraan </th>
+                          <th> Nama Pemilik </th>
                           <th> Jenis Kendaraan </th>
                         </tr>
                       </thead>
@@ -18,9 +19,10 @@
                       @foreach ($kendaraan as $value)
                         <tr>
                         <td>{{ $value->id_kendaraan}} </td>
-                          <td>{{ $value->nama_pemilik}}</td>
-                          <td>{{ $value->no_polisi}}</td>
-                          <td>{{ $value->jenis_kendaraan}} </td>
+                        <td>{{ $value->no_polisi}}</td>
+                        <td>{{ $value->nama_kendaraan}}</td>
+                        <td>{{ $value->nama_pemilik}}</td>
+                        <td>{{ $value->jenis_kendaraan}} </td>
                         </tr>
                         @endforeach
                       </tbody>

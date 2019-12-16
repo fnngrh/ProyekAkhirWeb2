@@ -9,18 +9,18 @@
                       <thead>
                         <tr>
                           <th width="1"> Id_Pemilik </th>
-                          <th> Nama </th>
-                          <th> No Polisi </th>
+                          <th> Nama Pemilik </th>
                           <th> Alamat </th>
+                          <th> Telepon </th>
                         </tr>
                       </thead>
                       <tbody>
                       @foreach ($pemilik as $value)
                         <tr>
                         <td>{{ $value->id_pemilik}} </td>
-                          <td>{{ $value->nama}}</td>
-                          <td>{{ $value->no_polisi}}</td>
-                          <td>{{ $value->alamat}} </td>
+                        <td>{{ $value->nama_pemilik}}</td>
+                        <td>{{ $value->alamat}} </td>
+                        <td>{{ $value->telp}}</td>
                         </tr>
                         @endforeach
                       </tbody>

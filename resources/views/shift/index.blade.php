@@ -8,7 +8,8 @@
                     <table class="table table-bordered">
                       <thead>
                         <tr>
-                          <th width="1"> Jadwal Shift </th>
+                          <th width="1"> Id Shift </th>
+                          <th> Jadwal Shift <th>
                           <th> Hari </th>
                           <th> Jam </th>
                         </tr>
@@ -16,9 +17,10 @@
                       <tbody>
                       @foreach ($shift as $value)
                         <tr>
-                        <td>{{ $value->id_shift}} </td>
-                          <td>{{ $value->hari}}</td>
-                          <td>{{ $value->jam}}</td>
+                        <td>{{$value->id_shift}}</td>
+                        <td>{{$value->jadwal_shift}}</td>
+                        <td>{{$value->hari}}</td>
+                        <td>{{$value->jam}}</td>
                         </tr>
                         @endforeach
                       </tbody>

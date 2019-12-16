@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePemiliksTable extends Migration
+class Pemilik extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,11 @@ class CreatePemiliksTable extends Migration
      */
     public function up()
     {
-        Schema::create('pemiliks', function (Blueprint $table) {
-            $table->bigIncrements('id');
+        Schema::create('pemilik', function (Blueprint $table) {
+            $table->bigIncrements('id_pemilik');
+            $table->string('nama_pemilik');
+            $table->string('alamat');
+            $table->string('telp');
             $table->timestamps();
         });
     }
@@ -26,6 +29,6 @@ class CreatePemiliksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pemiliks');
+        Schema::dropIfExists('pemilik');
     }
 }
