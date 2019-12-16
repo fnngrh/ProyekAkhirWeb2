@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Karyawan;
+use App\Shift;
 
 class KaryawanController extends Controller
 {
@@ -30,7 +31,8 @@ class KaryawanController extends Controller
      */
     public function create()
     {
-        //
+        $data = Shift::all();
+        return view('karyawan.tambah')->with('shift', $data);
     }
 
     /**
@@ -41,7 +43,18 @@ class KaryawanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nama_karyawan'=>'required',
+            'lokasi_pos'=>'required',
+            'jadwal_shift'=>'required',
+        ]);
+        $karyawan = new Karyawan([
+            'nama_karyawan' => $request->input('nama_karyawan'),
+            'lokasi_pos' => $request->input('lokasi_pos'),
+            'id_shift' => $request->input('jadwal_shift'),
+        ]);
+        $karyawan->save();
+        return redirect('karyawan');
     }
 
     /**
@@ -63,7 +76,8 @@ class KaryawanController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = Karyawan::where('id_karyawan',"=",$id)->firstOrFail();
+        return view('karyawan.edit')->with('karyawan',$data);
     }
 
     /**
@@ -86,6 +100,7 @@ class KaryawanController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Karyawan::where('id_karyawan',$id)->delete();
+        return redirect('karyawan');
     }
 }
