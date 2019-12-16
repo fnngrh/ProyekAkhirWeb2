@@ -25,7 +25,8 @@ class ShiftController extends Controller
      */
     public function create()
     {
-        //
+        $data =  Shift::all();
+        return view('shift.tambah')->with('shift', $data);
     }
 
     /**
@@ -36,7 +37,19 @@ class ShiftController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'jadwal_shift'=>'required',
+            'hari'=>'required',
+            'jam'=>'required',
+            
+        ]);
+        $shift = new Shift([
+            'jadwal_shift' => $request->input('jadwal_shift'),
+            'hari' => $request->input('hari'),
+            'jam' => $request->input('jam'),
+        ]);
+        $shift->save();
+        return redirect('shift');
     }
 
     /**
@@ -58,7 +71,8 @@ class ShiftController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = Shift::where('id_shift',"=",$id)->firstOrFail();
+        return view('shift.edit')->with('shift',$data);
     }
 
     /**
@@ -81,6 +95,7 @@ class ShiftController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Shift::where('id_shift',$id)->delete();
+        return redirect('shift');
     }
 }

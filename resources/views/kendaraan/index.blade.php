@@ -30,6 +30,18 @@
                         <td>{{ $value->nama_kendaraan}}</td>
                         <td>{{ $value->nama_pemilik}}</td>
                         <td>{{ $value->jenis_kendaraan}} </td>
+                        <td width="1">
+                            <div class="btn-group">
+                              <a href="{{route('kendaraan.edit',$value->id_kendaraan)}}" class="btn btn-success btn-sm far fa-edit"></a>
+                            </div>
+                          </td>
+                          <td width="1">
+                            <form action="{{route('kendaraan.destroy',$value->id_kendaraan)}}" method="POST">
+                              @csrf
+                              @method('DELETE')
+                              <button class="btn btn-danger btn-sm far fa-trash-alt" type="submit"></button>
+                            </form>
+                          </td>
                         </tr>
                         @endforeach
                       </tbody>

@@ -25,7 +25,8 @@ class PemilikController extends Controller
      */
     public function create()
     {
-        //
+        $data = Pemilik::all();
+        return view('pemilik.tambah')->with('pemilik', $data);
     }
 
     /**
@@ -36,7 +37,19 @@ class PemilikController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nama_pemilik'=>'required',
+            'alamat'=>'required',
+            'telp'=>'required',
+            
+        ]);
+        $pemilik = new Pemilik([
+            'nama_pemilik' => $request->input('nama_pemilik'),
+            'alamat' => $request->input('alamat'),
+            'telp' => $request->input('telp'),
+        ]);
+        $pemilik->save();
+        return redirect('pemilik');
     }
 
     /**
@@ -58,7 +71,8 @@ class PemilikController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = Pemilik::where('id_pemilik',"=",$id)->firstOrFail();
+        return view('pemilik.edit')->with('pemilik',$data);
     }
 
     /**
@@ -81,6 +95,7 @@ class PemilikController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Pemilik::where('id_pemilik',$id)->delete();
+        return redirect('pemilik');
     }
 }

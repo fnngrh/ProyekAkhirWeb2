@@ -28,6 +28,13 @@
                         <td>{{ $value->no_polisi}}</td>
                         <td>{{ $value->waktu_masuk}}</td>
                         <td>{{ $value->waktu_keluar}}</td>
+                        <td width="1">
+                            <form action="{{route('tempat_parkir.destroy',$value->id_parkir)}}" method="POST">
+                              @csrf
+                              @method('DELETE')
+                              <button class="btn btn-danger btn-sm far fa-trash-alt" type="submit"></button>
+                            </form>
+                          </td>
                         </tr>
                         @endforeach
                       </tbody>
