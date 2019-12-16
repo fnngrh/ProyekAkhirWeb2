@@ -11,7 +11,7 @@
                         <input type="text" name="nama_karyawan" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukan nama anda">
                         </br>
                         <label for="exampleInputEmail1">Lokasi Pos</label>
-                        <input type="text" name="lokasi_pos" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukan nama article baru">
+                        <input type="text" name="lokasi_pos" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
                         </br>
                         <label for="exampleInputEmail1">Jadwal Shift</label>
                         <select name="jadwal_shift" class="form-control" id="exampleInputEmail1">

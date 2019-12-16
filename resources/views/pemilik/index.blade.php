@@ -2,9 +2,14 @@
  @section ('konten')
 
 
- <div class="col-lg-12 grid-margin stretch-card">
-                <div class="card">
+                 <div class="col-lg-12 grid-margin stretch-card">
+                 <div class="card">
                   <div class="card-body">
+                  <div class="add-items d-flex">
+                  <a href="{{route('pemilik.create')}}" class="float-right btn btn-primary btn-sm">Tambah Data </a>
+                    
+                  </div>
+
                     <table class="table table-bordered">
                       <thead>
                         <tr>
@@ -12,6 +17,8 @@
                           <th> Nama Pemilik </th>
                           <th> Alamat </th>
                           <th> Telepon </th>
+                          <th>Edit</th>
+                          <th>Delete</th>
                         </tr>
                       </thead>
                       <tbody>

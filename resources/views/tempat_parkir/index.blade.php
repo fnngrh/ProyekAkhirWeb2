@@ -17,6 +17,8 @@
                           <th> No Polisi </th>
                           <th> Waktu Masuk </th>
                           <th> Waktu Keluar </th>
+                          <th>Delete</th>
+                          
                         </tr>
                       </thead>
                       <tbody>

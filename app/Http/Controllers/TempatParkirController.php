@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Tempat_Parkir;
+use App\Kendaraan;
 use Illuminate\Support\Facades\DB;
 
 class TempatParkirController extends Controller
@@ -31,7 +32,8 @@ class TempatParkirController extends Controller
      */
     public function create()
     {
-        //
+        $data = Tempat_Parkir::all();
+        return view('tempat_parkir.tambah')->with('kendaraan', $data);
     }
 
     /**
@@ -43,13 +45,18 @@ class TempatParkirController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'no_polisi'=>'required',
             'waktu_masuk'=>'required',
+            'waktu_keluar'=>'required',
+            
         ]);
         $tempat_parkir = new Tempat_Parkir([
-            'waktu_masuk' => $request->input('waktu_masuk')
+            'no_polisi' => $request->input('no_polisi'),
+            'waktu_masuk' => $request->input('waktu_masuk'),
+            'id_kendaraan' => $request->input('no_polisi'),
         ]);
         $tempat_parkir->save();
-        return redirect('tempat_parkir.index');
+        return redirect('tempat_parkir');
     }
 
     /**
@@ -71,7 +78,8 @@ class TempatParkirController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = Tempat_Parkir::where('id_parkir',"=",$id)->firstOrFail();
+        return view('tempat_parkir.edit')->with('tempat_parkir',$data);
     }
 
     /**
@@ -94,6 +102,7 @@ class TempatParkirController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Tempat_Parkir::where('id_parkir',$id)->delete();
+        return redirect('tempat_parkir');
     }
 }
