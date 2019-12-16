@@ -32,7 +32,7 @@ class KendaraanController extends Controller
      */
     public function create()
     {
-        $data =  Pemilik::all();
+        $data =  Kendaraan::all();
         return view('kendaraan.tambah')->with('pemilik', $data);
     }
 
@@ -92,7 +92,10 @@ class KendaraanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate(['no_polisi'=>'required','nama_kendaraan'=>'required','jenis_kendaraan'=>'required']);
+        $data = ['no_polisi'=>$request->no_polisi,'nama_kendaraan'=>$request->nama_kendaraan,'jenis_kendaraan'=>$request->jenis_kendaraan];
+        Kendaraan::where('id_kendaraan',$id)->update($data);
+        return redirect('kendaraan');
     }
 
     /**

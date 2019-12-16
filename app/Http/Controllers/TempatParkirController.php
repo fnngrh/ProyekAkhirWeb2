@@ -32,7 +32,7 @@ class TempatParkirController extends Controller
      */
     public function create()
     {
-        $data = Kendaraan::all();
+        $data = Tempat_Parkir::all();
         return view('tempat_parkir.tambah')->with('kendaraan', $data);
     }
 
@@ -79,8 +79,7 @@ class TempatParkirController extends Controller
      */
     public function edit($id)
     {
-        $data = Tempat_Parkir::where('id_parkir',"=",$id)->firstOrFail();
-        return view('tempat_parkir.edit')->with('tempat_parkir',$data);
+        // 
     }
 
     /**
@@ -92,7 +91,9 @@ class TempatParkirController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // 
+       
+
     }
 
     /**

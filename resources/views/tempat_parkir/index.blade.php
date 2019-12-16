@@ -17,7 +17,6 @@
                           <th> No Polisi </th>
                           <th> Waktu Masuk </th>
                           <th> Waktu Keluar </th>
-                          <th> Edit </th>
                           <th> Delete </th>
                           
                         </tr>

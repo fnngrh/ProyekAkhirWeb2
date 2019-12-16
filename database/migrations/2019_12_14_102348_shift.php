@@ -17,7 +17,7 @@ class Shift extends Migration
             $table->bigIncrements('id_shift');
             $table->string('jadwal_shift');
             $table->string('hari');
-            $table->time('jam');
+            $table->string('jam');
             $table->timestamps();
         });
     }

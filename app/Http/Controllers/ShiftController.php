@@ -84,7 +84,10 @@ class ShiftController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate(['jadwal_shift'=>'required','hari'=>'required','jam'=>'required']);
+        $data = ['jadwal_shift'=>$request->jadwal_shift,'hari'=>$request->hari,'jam'=>$request->jam,];
+        Shift::where('id_shift',$id)->update($data);
+        return redirect('shift');
     }
 
     /**

@@ -1,6 +1,7 @@
 @extends ('base')
 @section ('konten')
 
+<div class="container">
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
@@ -17,8 +18,8 @@
                         <label for="exampleInputEmail1">Jenis Kendaraan</label>
                         <select name="jenis_kendaraan" class="form-control" id="exampleInputEmail1">
                            
-                            <option value="Motor">Pilih Jenis Kendaraan</option>
-                            <option value="Mobil">Pilih Jenis Kendaraan</option>
+                            <option value="Motor">Motor</option>
+                            <option value="Mobil">Mobil</option>
                             
                         </select>
                     </div>
@@ -26,6 +27,7 @@
             </form>
         </div>
     </div>
+</div>
 </div>
                   
 
