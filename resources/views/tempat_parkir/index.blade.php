@@ -1,7 +1,7 @@
 @extends ('base')
  @section ('konten')
 
-                  
+ <div class="container">
                    <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
@@ -17,17 +17,23 @@
                           <th> No Polisi </th>
                           <th> Waktu Masuk </th>
                           <th> Waktu Keluar </th>
-                          <th>Delete</th>
+                          <th> Edit </th>
+                          <th> Delete </th>
                           
                         </tr>
                       </thead>
                       <tbody>
                       @foreach ($tempat_parkir as $value)
                         <tr>
-                        <td>{{ $value->id_tempatparkir}} </td>
+                        <td>{{ $value->id_parkir}} </td>
                         <td>{{ $value->no_polisi}}</td>
                         <td>{{ $value->waktu_masuk}}</td>
                         <td>{{ $value->waktu_keluar}}</td>
+                        <td width="1">
+                            <div class="btn-group">
+                              <a href="{{route('tempat_parkir.edit',$value->id_parkir)}}" class="btn btn-success btn-sm far fa-edit"></a>
+                            </div>
+                          </td>
                         <td width="1">
                             <form action="{{route('tempat_parkir.destroy',$value->id_parkir)}}" method="POST">
                               @csrf
@@ -42,6 +48,6 @@
                   </div>
                 </div>
               </div>
-
+</div>
 
  @endsection

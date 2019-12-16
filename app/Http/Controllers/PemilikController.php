@@ -84,7 +84,10 @@ class PemilikController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate(['nama_pemilik'=>'required','alamat'=>'required','telp'=>'required']);
+        $data = ['nama_pemilik'=>$request->nama_pemilik,'alamat'=>$request->alamat,'telp'=>$request->telp,];
+        Pemilik::where('id_pemilik',$id)->update($data);
+        return redirect('pemilik');
     }
 
     /**

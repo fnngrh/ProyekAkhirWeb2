@@ -32,7 +32,7 @@ class KendaraanController extends Controller
      */
     public function create()
     {
-        $data =  Kendaraan::all();
+        $data =  Pemilik::all();
         return view('kendaraan.tambah')->with('pemilik', $data);
     }
 

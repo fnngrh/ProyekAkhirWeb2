@@ -32,7 +32,7 @@ class TempatParkirController extends Controller
      */
     public function create()
     {
-        $data = Tempat_Parkir::all();
+        $data = Kendaraan::all();
         return view('tempat_parkir.tambah')->with('kendaraan', $data);
     }
 
@@ -51,9 +51,10 @@ class TempatParkirController extends Controller
             
         ]);
         $tempat_parkir = new Tempat_Parkir([
-            'no_polisi' => $request->input('no_polisi'),
-            'waktu_masuk' => $request->input('waktu_masuk'),
             'id_kendaraan' => $request->input('no_polisi'),
+            'waktu_masuk' => $request->input('waktu_masuk'),
+            'waktu_keluar' => $request->input('waktu_keluar'),
+            
         ]);
         $tempat_parkir->save();
         return redirect('tempat_parkir');
