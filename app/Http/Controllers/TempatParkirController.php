@@ -33,7 +33,8 @@ class TempatParkirController extends Controller
     public function create()
     {
         $data = Tempat_Parkir::all();
-        return view('tempat_parkir.tambah')->with('kendaraan', $data);
+        $array = Kendaraan::all();
+        return view('tempat_parkir.tambah', compact('data','array')); 
     }
 
     /**
@@ -91,7 +92,15 @@ class TempatParkirController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // 
+        $request->validate([
+            'no_polisi'=>'required',
+            'waktu_masuk'=>'required',
+            'waktu_keluar'=>'required',
+            
+        ]);
+        $data = ['no_polisi'=>$request->no_polisi,'waktu_masuk'=>$request->waktu_masuk,'waktu_keluar'=>$request->waktu_keluar,];
+        Tempat_Parkir::where('id_parkir',$id)->update($data);
+        return redirect('tempat_parkir');
        
 
     }
