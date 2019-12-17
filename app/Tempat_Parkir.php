@@ -9,9 +9,9 @@ class Tempat_Parkir extends Model
 {
     protected $table ='tempat_parkir';
 
-    protected $primarykey = 'tempat_parkir';
+    protected $primarykey = 'id_parkir';
     protected $fillable = [
-            'id_tempatparkir',
+            'id_kendaraan',
             'waktu_masuk',
             'waktu_keluar'
     ];

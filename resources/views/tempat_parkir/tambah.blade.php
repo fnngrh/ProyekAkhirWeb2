@@ -8,7 +8,7 @@
                 @csrf
                     <div class="form-group">
                         <label for="exampleInputEmail1">No Polisi</label>
-                        <select name="jenis_kendaraan" class="form-control" id="exampleInputEmail1">
+                        <select name="no_polisi" class="form-control" id="exampleInputEmail1">
                             @foreach($array as $value)
                             <option value="{{$value->id_kendaraan}}">{{$value->no_polisi}}</option>
                             @endforeach

@@ -24,7 +24,7 @@
                         </br>
                         <label for="exampleInputEmail1">Nama Pemilik</label>
                         <select name="nama_pemilik" class="form-control" id="exampleInputEmail1">
-                            @foreach($pemilik as $value)
+                            @foreach($array as $value)
                             <option value="{{$value->id_pemilik}}">{{$value->nama_pemilik}}</option>
                             @endforeach
                         </select>

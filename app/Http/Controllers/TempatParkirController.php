@@ -100,6 +100,7 @@ class TempatParkirController extends Controller
         ]);
         $data = ['no_polisi'=>$request->no_polisi,'waktu_masuk'=>$request->waktu_masuk,'waktu_keluar'=>$request->waktu_keluar,];
         Tempat_Parkir::where('id_parkir',$id)->update($data);
+        
         return redirect('tempat_parkir');
        
 

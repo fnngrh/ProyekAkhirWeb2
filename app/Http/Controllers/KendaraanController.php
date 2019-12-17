@@ -33,7 +33,10 @@ class KendaraanController extends Controller
     public function create()
     {
         $data =  Kendaraan::all();
-        return view('kendaraan.tambah')->with('pemilik', $data);
+        $array = Pemilik::all();
+        
+        return view('kendaraan.tambah',compact('data','array'));
+
     }
 
     /**
